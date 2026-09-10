@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# input="try";
+[ -d out ] && rm -r out;
+mkdir out;
+
 input="input.txt";
 
-cat $input | tr "ATCG" "TAGC" | tr -d "\n"| tac -r -s "a\|[^a]";
+cat $input | tr "TA" "AT" | tac -r -s 'a\|[^a]'
+
+# rm -r out;

@@ -1,9 +1,15 @@
 #!/bin/bash
 
-as=$(grep -o "A" rosalind_dna.txt | wc -l);
-cs=$(grep -o "C" rosalind_dna.txt | wc -l);
-gs=$(grep -o "G" rosalind_dna.txt | wc -l);
-ts=$(grep -o "T" rosalind_dna.txt | wc -l);
+[ -d out ] && rm -r out;
+mkdir out;
 
-echo $as $cs $gs $ts;
-echo $as $cs $gs $ts | wl-copy;
+input="rosalind_dna.txt";
+
+a=$(grep -o "A" $input | wc -l);
+c=$(grep -o "C" $input | wc -l);
+g=$(grep -o "G" $input | wc -l);
+t=$(grep -o "T" $input | wc -l);
+
+echo $a $c $g $t;
+
+# rm -r out;
